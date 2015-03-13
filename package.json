@@ -1,6 +1,6 @@
 {
   "name": "dh-fill-pdf",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Fill out pdf forms",
   "main": "index.js",
   "repository": {
@@ -23,6 +23,6 @@
   "homepage": "https://github.com/dommmel/fill-pdf",
   "readme": "# fill-js\n\n\nA node module to fill out pdf forms (utf8 compatible).\n\nIt uses [pdftk](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/) to fill out pdf forms and [ghostscript](http://www.ghostscript.com/) to convert embedded fonts to outlines to increase cross-device robustness.\n\n## Installation\n    npm install fill-pdf\n \n## Dependencies\nYou need to have the ```pdftk``` an ```gs``` binaries in your PATH.  \n\n\n### Install on Mac OSX\n\n* To install PDFtk use [the official installer](http://www.pdflabs.com/tools/pdftk-server/) or if you have [homebrew-cask](https://github.com/phinze/homebrew-cask) installed you can run ```brew cask install pdftk```\n* To install Ghoscript via homebrew run :```brew install ghostscript```\n\n### Install on Ubuntu\n```sudo apt-get install pdftk ghostscript```\n\n## Usage example (with express)\n\n```javascript\nvar fillPdf = require(\"fill-pdf\");\nvar formDate = { FieldName: 'Text to put into form field' };\nvar pdfTemplatePath = \"templates.pdf\";\n\napp.get('/filled_form.pdf', function(req, res) {\n  fillPdf.generatePdf(formDate,pdfTemplatePath, function(output) {\n    res.type(\"application/pdf\");\n    res.send(output);\n  });\n});\n```\n\n## License\nMIT\n\n## Acknowledgements\nbased on [utf8-fdf-generator](https://www.npmjs.org/package/utf8-fdf-generator)\n",
   "readmeFilename": "README.md",
-  "_id": "fill-pdf@0.0.2",
-  "_from": "dh-fill-pdf@0.0.2"
+  "_id": "fill-pdf@0.0.3",
+  "_from": "dh-fill-pdf@0.0.3"
 }
